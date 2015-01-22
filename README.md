@@ -39,11 +39,14 @@ crontab -l
 En el cron de ejemplo, a las 00:30 y 12:30 se respalda el directorio /home/me/proyecto en el directorio /respaldo_proyecto de Mega.
 
 Nota: en las primeras lineas del script 'myMegaSync.sh' puede configurar algunas variables:
+
  #-+-+-+-+-+-+ Configure de de ser necesario: -+-+-+-+-+-+
+
 export PATH=$PATH:/root/MegaFuse #Directorio donde instalo o compilo MegaFuse
 export PATH=$PATH:/root/megatools #Opcional, no necesaria. Directorio donde instalo o compilo megatools
 MEGAFUSE_CONF=${MEGAFUSE_CONF:=~/.megafuse.conf} #Coloque la ruta de su archivo de configuracion en lugar de '~/.megafuse.conf'. Archivo default utilizado.
 MEGAFUSE_LOG=/tmp/MegaFuse.$date.log #Ruta de archivo de logs de MegaFuse.
+
  #-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
 
 + Ejemplo de archivo de configuración para MegaFuse:
