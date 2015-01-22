@@ -31,7 +31,7 @@ Opciones:
 
 Observe que utilizando la variable 'MEGAFUSE_CONF', usted podra utilizar más de una cuenta de Mega (http://mega.co.nz).
 
-Una vez que pruebe el funcionamiento de la herramienta por línea de comando, usted puede programar crones para que periodicamente respalde o sincronice sus archivos, ejeplo:
+Una vez que pruebe el funcionamiento de la herramienta por línea de comando, usted puede programar crones para que periodicamente respalde o sincronice sus archivos, ejemplo:
 
 crontab -l
 30 0,12 * * * MEGAFUSE_CONF=/root/.megafuse.cuenta01.conf /root/bin/myMegaSync.sh /home/me/proyecto /mnt/mega/respaldo_proyecto --delete >> /tmp/log_myMegaSync.log 2>&1
@@ -39,19 +39,19 @@ crontab -l
 En el cron de ejemplo, a las 00:30 y 12:30 se respalda el directorio /home/me/proyecto en el directorio /respaldo_proyecto de Mega.
 
 Nota: en las primeras lineas del script 'myMegaSync.sh' puede configurar algunas variables:
-#-+-+-+-+-+-+ Configure de de ser necesario: -+-+-+-+-+-+
+ #-+-+-+-+-+-+ Configure de de ser necesario: -+-+-+-+-+-+
 export PATH=$PATH:/root/MegaFuse #Directorio donde instalo o compilo MegaFuse
 export PATH=$PATH:/root/megatools #Opcional, no necesaria. Directorio donde instalo o compilo megatools
 MEGAFUSE_CONF=${MEGAFUSE_CONF:=~/.megafuse.conf} #Coloque la ruta de su archivo de configuracion en lugar de '~/.megafuse.conf'. Archivo default utilizado.
 MEGAFUSE_LOG=/tmp/MegaFuse.$date.log #Ruta de archivo de logs de MegaFuse.
-#-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+ #-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
 
 + Ejemplo de archivo de configuración para MegaFuse:
 
 cat /root/.megafuse.conf
 USERNAME = myemail@mailexample.com
 PASSWORD = Pa$w0rDM3g4
-#### you can specify a mountpoint here, only absolute paths are supported.
+ #### you can specify a mountpoint here, only absolute paths are supported.
 MOUNTPOINT = /mnt/mega
 
 + Ejemplo de archivo de configuración para Megatools:
