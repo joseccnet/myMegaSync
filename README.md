@@ -16,15 +16,15 @@ Con esta herramienta, usted podra realizar respaldos de su sistema Linux sincron
 
 ¿Cómo funciona?
 
-chmod 750 ./myMegaSync.sh
+``chmod 750 ./myMegaSync.sh``
 
 Ejecute:
 
-./myMegaSync.sh /path/to/local/dir /path/to/mega/dir [--delete]
+``./myMegaSync.sh /path/to/local/dir /path/to/mega/dir [--delete]``
 
 or
 
-MEGAFUSE_CONF=/path/to/megafuse.conf ./myMegaSync.sh /path/to/local/dir /path/to/mega/dir [--delete]
+``MEGAFUSE_CONF=/path/to/megafuse.conf ./myMegaSync.sh /path/to/local/dir /path/to/mega/dir [--delete]``
 
 Opciones:
   --delete : Elimina archivos/directorios en el directorio DESTINO que no se encuentren en el origen.
@@ -33,7 +33,7 @@ Observe que utilizando la variable 'MEGAFUSE_CONF', usted podra utilizar más de
 
 Una vez que pruebe el funcionamiento de la herramienta por línea de comando, usted puede programar crones para que periodicamente respalde o sincronice sus archivos, ejemplo:
 
-crontab -l
+``crontab -l``
 
 30 0,12 * * * MEGAFUSE_CONF=/root/.megafuse.cuenta01.conf /root/bin/myMegaSync.sh /home/me/proyecto /mnt/mega/respaldo_proyecto --delete >> /tmp/log_myMegaSync.log 2>&1
 
@@ -43,19 +43,19 @@ Nota: en las primeras lineas del script 'myMegaSync.sh' puede configurar algunas
 
  #-+-+-+-+-+-+ Configure de de ser necesario: -+-+-+-+-+-+
 
-export PATH=$PATH:/root/MegaFuse #Directorio donde instalo o compilo MegaFuse
+``export PATH=$PATH:/root/MegaFuse #Directorio donde instalo o compilo MegaFuse``
 
-export PATH=$PATH:/root/megatools #Opcional, no necesaria. Directorio donde instalo o compilo megatools
+``export PATH=$PATH:/root/megatools #Opcional, no necesaria. Directorio donde instalo o compilo megatools``
 
-MEGAFUSE_CONF=${MEGAFUSE_CONF:=~/.megafuse.conf} #Coloque la ruta de su archivo de configuracion en lugar de '~/.megafuse.conf'. Archivo default utilizado.
+``MEGAFUSE_CONF=${MEGAFUSE_CONF:=~/.megafuse.conf} #Coloque la ruta de su archivo de configuracion en lugar de '~/.megafuse.conf'. Archivo default utilizado.``
 
-MEGAFUSE_LOG=/tmp/MegaFuse.$date.log #Ruta de archivo de logs de MegaFuse.
+``MEGAFUSE_LOG=/tmp/MegaFuse.$date.log #Ruta de archivo de logs de MegaFuse.``
 
  #-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
 
 + Ejemplo de archivo de configuración para MegaFuse:
 
-cat /root/.megafuse.conf
+``cat /root/.megafuse.conf``
 
 USERNAME = myemail@mailexample.com
 
@@ -67,7 +67,7 @@ MOUNTPOINT = /mnt/mega
 
 + Ejemplo de archivo de configuración para Megatools:
 
-cat /root/.megarc
+``cat /root/.megarc``
 
 [Login]
 
